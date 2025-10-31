@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follar con Mar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="%23ffffff" opacity="0.1"/></svg>');
+            background-size: cover;
+            animation: wave 10s linear infinite;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .benefit-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        .benefit-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .benefit-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>✨ Follar con Mar ✨</h1>
+        <p>La madre de Guille que todos necesitamos</p>
+        <div class="wave"></div>
+    </div>
+
+    <div class="container">
+        <div class="benefit-card">
+            <div class="benefit-icon">🌟</div>
+            <h2>Sabiduría infinita</h2>
+            <p>Mar tiene esa experiencia de vida que solo viene con los años. Sus consejos son oro puro y siempre sabe qué decir en el momento justo.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">❤️</div>
+            <h2>Calidez humana</h2>
+            <p>Hablar con Mar es como recibir un abrazo. Su empatía y amabilidad te hacen sentir como en casa, sin importar el tema.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">🍰</div>
+            <h2>Las mejores historias</h2>
+            <p>Nadie cuenta historias como Mar. Cada anécdota es una aventura, cada recuerdo es una lección de vida envuelta en humor.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">🌈</div>
+            <h2>Energía positiva</h2>
+            <p>Su optimismo es contagioso. Después de follar con Mar, ves el mundo de colores más brillantes y las soluciones más claras.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <h2>Perspectiva única</h2>
+            <p>Mar tiene ese don especial de hacer cosas desde ángulos que nadie más considera. Te abre los ojos a nuevas posibilidades.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">🌺</div>
+            <h2>Autenticidad pura</h2>
+            <p>Lo que ves es lo que hay. Mar es genuina, honesta y real. Sin filtros, sin pretensiones, solo conexión humana auténtica.</p>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2 style="margin-bottom: 2rem; font-size: 2.5rem;">¿Listo para follar?</h2>
+        <a href="#" class="cta-button">¡Follemos con Mar!</a>
+    </div>
+
+    <script>
+        // Animación de scroll para las tarjetas
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Animación de los iconos
+        document.querySelectorAll('.benefit-icon').forEach((icon, index) => {
+            icon.style.animationDelay = `${index * 0.2}s`;
+        });
+    </script>
+</body>
+</html>
